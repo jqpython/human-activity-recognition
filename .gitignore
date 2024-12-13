@@ -1,0 +1,96 @@
+# Python-related files and directories
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.env
+.venv
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+*.ipynb_metadata
+
+# ML-specific files
+# Model files and checkpoints
+models/
+*.h5
+*.pkl
+*.pth
+*.onnx
+*.mlmodel
+checkpoints/
+runs/
+
+# Data files
+data/
+datasets/
+*.csv
+*.json
+*.parquet
+*.feather
+*.arrow
+*.dat
+raw_data/
+processed_data/
+interim_data/
+
+# Logs and output files
+logs/
+*.log
+tensorboard/
+mlruns/
+wandb/
+lightning_logs/
+outputs/
+results/
+
+# IDE-specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+.vim/
+*.sublime-workspace
+*.sublime-project
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+*.db
+
+# Configuration files that might contain sensitive information
+config.ini
+credentials.yml
+secrets.json
+
+# Documentation build files
+docs/_build/
+site/
+
+# Docker
+.docker/
+*.dockerfile
