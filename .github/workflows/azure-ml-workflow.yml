@@ -1,0 +1,42 @@
+# Name of your workflow - this will appear in the GitHub Actions tab
+name: Azure ML Basic Workflow
+
+# Define when this workflow should run
+# In this case, it will run when you push changes to the main branch
+on:
+  push:
+    branches:
+      - main
+
+# Define the jobs that will run as part of this workflow
+jobs:
+  # This is the name of our job
+  test-azure-connection:
+    # Specify the type of machine to run this on
+    runs-on: ubuntu-latest
+
+    # Define the steps this job will take
+    steps:
+      # This step checks out your repository code
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      # Set up Python (needed for Azure ML operations)
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      # Install the Azure ML SDK and other required packages
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install azure-ai-ml azure-identity
+
+      # Print some basic information to verify the workflow is running
+      - name: Print workflow information
+        run: |
+          echo "Repository: ${{ github.repository }}"
+          echo "Branch: ${{ github.ref }}"
+          echo "Running on: ${{ runner.os }}"
+          python --version
